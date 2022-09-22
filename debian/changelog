@@ -1,0 +1,96 @@
+node-esquery (1.4.0~ds-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * simplify source helper script copyright-check
+  * update copyright info:
+    + use Reference field (not License-Reference);
+      tighten lintian overrides
+    + update coverage
+  * update git-buildpackage config: add usage comment
+  * declare compliance with Debian Policy 4.6.0
+  * update patch 2003
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 23 Sep 2021 20:47:56 +0200
+
+node-esquery (1.3.1~ds-4) unstable; urgency=medium
+
+  * Team upload
+  * Allow STDERR in autopkgtest
+
+ -- Yadd <yadd@debian.org>  Sat, 31 Jul 2021 12:46:10 +0200
+
+node-esquery (1.3.1~ds-3) unstable; urgency=medium
+
+  * fix have autopkgtest depend on nodejs
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 28 Dec 2020 14:30:49 +0100
+
+node-esquery (1.3.1~ds-2) unstable; urgency=medium
+
+  * re-release targeted unstable
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 16 Dec 2020 14:07:32 +0100
+
+node-esquery (1.3.1~ds-1) experimental; urgency=medium
+
+  [ upstream ]
+  * new release(s)
+
+  [ Jonas Smedegaard ]
+  * copyright:
+    + avoid pre-generated code when repackaging upstream source
+    + update coverage
+  * update git-buildpackage settings:
+    + use DEP-14 git branch names
+  * modernize source script copyright-check
+  * fix stop (build-)depend on nodejs
+  * use debhelper compatibility level 13 (not 12)
+  * add patch 2002
+    to avoid Nodejs module transform-es2017-object-entries
+  * add patch 2003 to skip generate browser code
+  * update build routines;
+    build-depend on
+    node-rollup-plugin-node-resolve node-rollup-plugin-commonjs
+    node-rollup-plugin-json pegjs rollup
+  * check testsuite and lint-check code during build;
+    build-depend on
+    eslint mocha node-babel-register node-chai node-estraverse
+  * declare compliance with Debian Policy 4.5.1
+  * add non-superficial autopkgtest
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 15 Dec 2020 23:17:58 +0100
+
+node-esquery (1.1.0-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+  [ Jonas Smedegaard ]
+  * fix remove generated docs in target clean
+  * use debhelper compatibility level 12 (not 10);
+    build-depend on debhelper-compat (not debhelper)
+  * declare compliance with Debian Policy 4.5.0
+  * unfuzz patch 2001
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 23 Mar 2020 18:05:57 +0100
+
+node-esquery (1.0.1-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release.
+
+  [ Jonas Smedegaard ]
+  * Fix capitalize sentence in long description.
+  * Drop obsolete lintian override for unversioned debhelper 10.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 27 Oct 2019 19:09:17 +0100
+
+node-esquery (1.0.0-1) experimental; urgency=low
+
+  * Initial release.
+    Closes: Bug#901186, #942573.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 18 Oct 2019 12:22:02 +0200

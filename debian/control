@@ -1,0 +1,46 @@
+Source: node-esquery
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders:
+ Jonas Smedegaard <dr@jones.dk>,
+Build-Depends:
+ debhelper-compat (= 13),
+ eslint <!nocheck>,
+ mocha <!nocheck>,
+ node-babel-register (>= 7) <!nocheck>,
+ node-chai <!nocheck>,
+ node-estraverse <!nocheck>,
+ node-rollup-plugin-node-resolve,
+ node-rollup-plugin-commonjs,
+ node-rollup-plugin-json,
+ pandoc <!nodoc>,
+ pegjs,
+ rollup,
+Standards-Version: 4.6.0
+Homepage: https://github.com/estools/esquery
+Vcs-Browser: https://salsa.debian.org/js-team/node-esquery
+Vcs-Git: https://salsa.debian.org/js-team/node-esquery.git
+Rules-Requires-Root: no
+
+Package: node-esquery
+Architecture: all
+Depends:
+ node-estraverse,
+ ${misc:Depends},
+Description: query library for ECMAScript AST using CSS-like queries
+ ESQuery is a library for querying the AST output by Esprima
+ for patterns of syntax using a CSS style selector system.
+ .
+ Esprima is a high performance, standard-compliant ECMAScript parser
+ written in ECMAScript (also popularly known as JavaScript).
+ .
+ An abstract syntax tree (AST) is a tree representation
+ of the abstract syntactic structure of source code
+ written in a programming language.
+ Each node of the tree denotes a construct
+ occurring in the source code.
+ .
+ Cascading Style Sheets (CSS) is a style sheet language
+ used for describing the presentation of a document
+ written in a markup language like HTML.

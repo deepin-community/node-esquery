@@ -1,0 +1,13 @@
+Description: Avoid privacy breaches reading the documentation
+Author: Jonas Smedegaard <dr@jones.dk>
+Last-Update: 2019-10-18
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/README.md
++++ b/README.md
+@@ -23,5 +23,3 @@
+ * [matches-any](http://dev.w3.org/csswg/selectors4/#matches): `:matches([attr] > :first-child, :last-child)`
+ * [subject indicator](http://dev.w3.org/csswg/selectors4/#subject): `!IfStatement > [name="foo"]`
+ * class of AST node: `:statement`, `:expression`, `:declaration`, `:function`, or `:pattern`
+-
+-[![Build Status](https://travis-ci.org/estools/esquery.png?branch=master)](https://travis-ci.org/estools/esquery)

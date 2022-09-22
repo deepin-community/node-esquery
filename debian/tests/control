@@ -1,0 +1,15 @@
+Test-Command: node -e "require('esquery');"
+Depends:
+ node-esquery,
+ nodejs,
+Restrictions: superficial
+
+Test-Command:
+ sed -i -e 's,\.\./esquery\.js,esquery,' tests/*.js
+ && mocha --reporter tap --require chai/register-assert --require @babel/register tests
+Depends:
+ mocha,
+ node-babel-register (>= 7),
+ node-chai,
+ node-esquery,
+Restrictions: allow-stderr

@@ -1,0 +1,70 @@
+Description: skip generate browser code
+ We target only Nodejs (not browsers) for now,
+ because Nodejs module transform-es2017-object-entries is missing.
+Forwarded: no
+Author: Jonas Smedegaard <dr@jones.dk>
+Last-Update: 2020-12-16
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/package.json
++++ b/package.json
+@@ -4,11 +4,10 @@
+   "author": "Joel Feenstra <jrfeenst+esquery@gmail.com>",
+   "contributors": [],
+   "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+-  "main": "dist/esquery.min.js",
+-  "module": "dist/esquery.esm.min.js",
++  "main": "dist/esquery.js",
++  "module": "dist/esquery.esm.js",
+   "files": [
+     "dist/*.js",
+-    "dist/*.map",
+     "parser.js",
+     "license.txt",
+     "README.md"
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -1,10 +1,10 @@
+-import { terser } from 'rollup-plugin-terser';
++//import { terser } from 'rollup-plugin-terser';
+ 
+ import nodeResolve from '@rollup/plugin-node-resolve';
+ import commonjs from '@rollup/plugin-commonjs';
+ import json from '@rollup/plugin-json';
+ 
+-import babel from 'rollup-plugin-babel';
++//import babel from 'rollup-plugin-babel';
+ import packageJson from './package.json';
+ 
+ /**
+@@ -42,23 +42,23 @@
+             json(),
+             nodeResolve(),
+             commonjs(),
+-            babel()
++            //babel()
+         ]
+     };
+     if (lite) {
+         nonMinified.external = Object.keys(packageJson.dependencies);
+     }
+-    if (minifying) {
+-        nonMinified.plugins.push(terser());
+-    }
++    //if (minifying) {
++    //    nonMinified.plugins.push(terser());
++    //}
+     return nonMinified;
+ }
+ 
+ export default [
+-    getRollupObject({ minifying: true, format: 'umd' }),
++    //getRollupObject({ minifying: true, format: 'umd' }),
+     getRollupObject({ minifying: false, format: 'umd' }),
+-    getRollupObject({ minifying: true, format: 'esm' }),
++    //getRollupObject({ minifying: true, format: 'esm' }),
+     getRollupObject({ minifying: false, format: 'esm' }),
+-    getRollupObject({ minifying: true, format: 'umd', lite: true }),
++    //getRollupObject({ minifying: true, format: 'umd', lite: true }),
+     getRollupObject({ minifying: false, format: 'umd', lite: true })
+ ];

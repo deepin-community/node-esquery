@@ -1,0 +1,20 @@
+Description: avoid Nodejs module transform-es2017-object-entries
+ The module transform-es2017-object-entries is needed
+ only when targeting browser (which we don't currently),
+ not for babel-ified mocha testsuite.
+Forwarded: no
+Author: Jonas Smedegaard <dr@jones.dk>
+Last-Update: 2020-12-15
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/.babelrc.json
++++ b/.babelrc.json
+@@ -1,8 +1,5 @@
+ {
+   "presets": [
+     ["@babel/preset-env"]
+-  ],
+-  "plugins": [
+-    ["transform-es2017-object-entries"]
+   ]
+ }

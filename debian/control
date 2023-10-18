@@ -17,7 +17,7 @@ Build-Depends:
  pandoc <!nodoc>,
  pegjs,
  rollup,
-Standards-Version: 4.6.0
+Standards-Version: 4.6.2
 Homepage: https://github.com/estools/esquery
 Vcs-Browser: https://salsa.debian.org/js-team/node-esquery
 Vcs-Git: https://salsa.debian.org/js-team/node-esquery.git
@@ -28,6 +28,7 @@ Architecture: all
 Depends:
  node-estraverse,
  ${misc:Depends},
+Multi-Arch: foreign
 Description: query library for ECMAScript AST using CSS-like queries
  ESQuery is a library for querying the AST output by Esprima
  for patterns of syntax using a CSS style selector system.

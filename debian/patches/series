@@ -1,3 +1,4 @@
 2001_privacy.patch
 2002_avoid_transform-es2017-object-entries.patch
 2003_avoid_browser_modules.patch
+2004_fix-for-rollup-3.patch

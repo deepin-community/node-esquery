@@ -14,10 +14,13 @@ Files: README.md
  debian/patches/2001_privacy.patch
  debian/patches/2002_avoid_transform-es2017-object-entries.patch
  debian/patches/2003_avoid_browser_modules.patch
+ debian/patches/2004_fix-for-rollup-3.patch
  debian/patches/series
  debian/rules
+ debian/salsa-ci.yml
  debian/source/format
  debian/tests/control
+ debian/upstream/metadata
  debian/watch
  esquery.js
  grammar.pegjs

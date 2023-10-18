@@ -1,0 +1,33 @@
+Description: fix for rollup 3
+Author: Yadd <yadd@debian.org>
+Bug-Debian: https://bugs.debian.org/1022690
+Forwarded: not-needed
+Last-Update: 2022-10-28
+
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -1,11 +1,11 @@
+ //import { terser } from 'rollup-plugin-terser';
+ 
+-import nodeResolve from '@rollup/plugin-node-resolve';
+-import commonjs from '@rollup/plugin-commonjs';
+-import json from '@rollup/plugin-json';
++const { nodeResolve } = require('@rollup/plugin-node-resolve');
++const commonjs = require('@rollup/plugin-commonjs');
++const json = require('@rollup/plugin-json');
+ 
+ //import babel from 'rollup-plugin-babel';
+-import packageJson from './package.json';
++const packageJson = require('./package.json');
+ 
+ /**
+  * @external RollupConfig
+@@ -54,7 +54,7 @@
+     return nonMinified;
+ }
+ 
+-export default [
++module.exports = [
+     //getRollupObject({ minifying: true, format: 'umd' }),
+     getRollupObject({ minifying: false, format: 'umd' }),
+     //getRollupObject({ minifying: true, format: 'esm' }),
